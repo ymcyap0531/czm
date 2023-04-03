@@ -1,3 +1,4 @@
+/*
 const callback = (mutationList, observer) => {
   if(!checkIsUS()) {
     const userIpInfo = JSON.parse(sessionStorage.getItem('userIpInfo'))
@@ -8,6 +9,7 @@ const callback = (mutationList, observer) => {
 const observer = new MutationObserver(callback);
 const config = { attributes: true, childList: true, subtree: true, characterData: true, characterDataOldValue: true };
 observer.observe(document.querySelector("html"), config);
+*/
 
 const checkIsIpFetch = () => {
   if(sessionStorage.getItem('userIpInfo')) return true
@@ -102,5 +104,9 @@ const main = async() => {
 }
 
 //initObserver()
-main()
+document.onreadystatechange = () => {
+  if (document.readyState === 'complete') {
+    main()
+  }
+};
 
