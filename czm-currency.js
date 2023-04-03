@@ -56,7 +56,7 @@ const convertCurrency = async(code) => {
     if(tmpPrice) tmpPrice = tmpPrice.replace(/[^0-9.]/g, '')
     try{
       let price = (parseFloat(tmpPrice)/parseFloat(currencies.rates[code])).toFixed(2)
-      console.log(price)
+      //console.log(price)
       if(price && !isNaN(price))
         allPriceTag[i].innerText = `${price} ${code}`
     }catch(e) {
@@ -71,7 +71,7 @@ const convertCurrency = async(code) => {
     if(tmpPrice) tmpPrice = tmpPrice.replace(/[^0-9.]/g, '')
     try{
       let price = (parseFloat(tmpPrice)/parseFloat(currencies.rates[code])).toFixed(2)
-      console.log(price)
+      //console.log(price)
       if(price && !isNaN(price))
         allPriceTag2[i].innerHTML = `<span>${price} ${code}</span>`
     }catch(e) {
